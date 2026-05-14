@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro - GlobalImport S.A.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Work+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="index.html">GlobalImport S.A.</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="nav-links">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a class="nav-cta" href="registro.html">Registro</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="registro-main">
+    <section class="registro-header">
+      <div class="container">
+        <h1>Crear tu cuenta en GlobalImport</h1>
+        <p>Regístrate para acceder a nuestros servicios de importación y logística</p>
+      </div>
+    </section>
+
+    <section class="registro-section">
+      <div class="container">
+        <form class="registro-form" id="registroForm" method="POST" action="#">
+          <!-- SECCIÓN A: DATOS PERSONALES -->
+          <fieldset class="form-section">
+            <legend class="section-title">Datos Personales</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Ej: Juan Carlos Pérez"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="fechaNacimiento">Fecha de nacimiento *</label>
+                <input
+                  type="date"
+                  id="fechaNacimiento"
+                  name="fechaNacimiento"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="rut">RUT / Número de documento *</label>
+                <input
+                  type="text"
+                  id="rut"
+                  name="rut"
+                  placeholder="Ej: 12.345.678-9"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="genero">Género *</label>
+                <select id="genero" name="genero" required>
+                  <option value="">-- Seleccionar --</option>
+                  <option value="masculino">Masculino</option>
+                  <option value="femenino">Femenino</option>
+                  <option value="nobinario">No binario</option>
+                  <option value="prefiero_no_decir">Prefiero no decir</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="nacionalidad">Nacionalidad *</label>
+                <select id="nacionalidad" name="nacionalidad" required>
+                  <option value="">-- Seleccionar --</option>
+                  <option value="argentina">Argentina</option>
+                  <option value="chile">Chile</option>
+                  <option value="colombia">Colombia</option>
+                  <option value="españa">España</option>
+                  <option value="mexico">México</option>
+                  <option value="perú">Perú</option>
+                  <option value="uruguay">Uruguay</option>
+                  <option value="venezuela">Venezuela</option>
+                  <option value="otra">Otra</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- SECCIÓN B: DATOS DE CONTACTO Y ACCESO -->
+          <fieldset class="form-section">
+            <legend class="section-title">Datos de Contacto y Acceso</legend>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="email">Correo electrónico *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="tu@correo.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="emailConfirm">Confirmar correo electrónico *</label>
+                <input
+                  type="email"
+                  id="emailConfirm"
+                  name="emailConfirm"
+                  placeholder="tu@correo.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Contraseña *</label>
+                <div class="password-input-wrapper">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Mínimo 8 caracteres"
+                    required
+                  />
+                  <span class="password-strength" id="strengthIndicator"></span>
+                </div>
+                <small class="password-requirements">
+                  Debe contener mayúsculas, minúsculas, números y caracteres especiales
+                </small>
+              </div>
+
+              <div class="form-group">
+                <label for="passwordConfirm">Confirmar contraseña *</label>
+                <input
+                  type="password"
+                  id="passwordConfirm"
+                  name="passwordConfirm"
+                  placeholder="Confirma tu contraseña"
+                  required
+                />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="telefono">Teléfono *</label>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  placeholder="+56 9 1234 5678 (incluir código de país)"
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- SECCIÓN C: DIRECCIÓN DE ENTREGA -->
+          <fieldset class="form-section">
+            <legend class="section-title">Dirección de Entrega</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="paisEntrega">País *</label>
+                <select id="paisEntrega" name="paisEntrega" required>
+                  <option value="">-- Seleccionar --</option>
+                  <option value="argentina">Argentina</option>
+                  <option value="chile">Chile</option>
+                  <option value="colombia">Colombia</option>
+                  <option value="españa">España</option>
+                  <option value="mexico">México</option>
+                  <option value="perú">Perú</option>
+                  <option value="uruguay">Uruguay</option>
+                  <option value="venezuela">Venezuela</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="provincia">Provincia / Estado *</label>
+                <input
+                  type="text"
+                  id="provincia"
+                  name="provincia"
+                  placeholder="Ej: Buenos Aires"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="ciudad">Ciudad *</label>
+                <input
+                  type="text"
+                  id="ciudad"
+                  name="ciudad"
+                  placeholder="Ej: CABA"
+                  required
+                />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="calle">Calle y número *</label>
+                <input
+                  type="text"
+                  id="calle"
+                  name="calle"
+                  placeholder="Ej: Avenida Rivadavia 1234"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="codigoPostal">Código postal *</label>
+                <input
+                  type="text"
+                  id="codigoPostal"
+                  name="codigoPostal"
+                  placeholder="Ej: 1024"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="pisoDepto">Piso y departamento</label>
+                <input
+                  type="text"
+                  id="pisoDepto"
+                  name="pisoDepto"
+                  placeholder="Ej: 5 B"
+                />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="referencia">Referencia o instrucciones adicionales</label>
+                <textarea
+                  id="referencia"
+                  name="referencia"
+                  placeholder="Máximo 200 caracteres"
+                  maxlength="200"
+                  rows="3"
+                ></textarea>
+                <small id="charCount">0/200</small>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- SECCIÓN D: PREFERENCIAS Y TÉRMINOS -->
+          <fieldset class="form-section">
+            <legend class="section-title">Preferencias y Términos</legend>
+
+            <div class="form-group-block">
+              <label class="form-label-bold">Categorías de interés</label>
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="categorias" value="electronica" />
+                  Electrónica
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="categorias" value="indumentaria" />
+                  Indumentaria
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="categorias" value="hogar" />
+                  Hogar
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="categorias" value="otros" />
+                  Otros
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group-block">
+              <label class="form-label-bold">Tipo de cliente *</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="tipoCliente" value="consumidor" required />
+                  Consumidor final
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="tipoCliente" value="revendedor" required />
+                  Revendedor
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="tipoCliente" value="empresa" required />
+                  Empresa
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="comoNosConociste">¿Cómo nos conociste? *</label>
+              <select id="comoNosConociste" name="comoNosConociste" required>
+                <option value="">-- Seleccionar --</option>
+                <option value="redes_sociales">Redes sociales</option>
+                <option value="recomendacion">Recomendación</option>
+                <option value="busqueda_web">Búsqueda web</option>
+                <option value="publicidad">Publicidad</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group-block">
+              <label class="checkbox-label large">
+                <input type="checkbox" name="newsletter" />
+                Deseo suscribirme al newsletter de GlobalImport para recibir novedades y
+                ofertas
+              </label>
+            </div>
+
+            <div class="form-group-block">
+              <label class="checkbox-label large required">
+                <input type="checkbox" name="terminos" required />
+                Acepto los <a href="#" class="link-modal">Términos y Condiciones</a> *
+              </label>
+            </div>
+
+            <div class="form-group-block">
+              <label class="checkbox-label large required">
+                <input type="checkbox" name="privacidad" required />
+                Acepto la <a href="#" class="link-modal">Política de Privacidad</a> *
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- BOTONES DE ACCIÓN -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Registrarme</button>
+            <button type="reset" class="btn btn-secondary">Limpiar formulario</button>
+          </div>
+
+          <div class="form-footer">
+            <p>
+              ¿Ya tienes cuenta?
+              <a href="index.html" class="link-login">Inicia sesión aquí</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 GlobalImport S.A. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="registro.js"></script>
+</body>
+</html>
